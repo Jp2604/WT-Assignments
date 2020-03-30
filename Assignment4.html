@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Assignment-4</title>
+    <script>
+        function validateForm() {
+            var fname = document.getElementById("fname").value;
+            var surname = document.getElementById("surname").value;
+            var email = document.getElementById("email").value;
+            var bdate = document.getElementById("bdate").value;
+            var mobileno = document.getElementById("mobileno").value;
+            var reg = /^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/;
+            var phoneno = /^\d{10}$/;
+            var dob = Date.parse(bdate);
+            var byear = bob.getFullyear();
+
+            if (fname == "") {
+                alert("First name can't be null");
+                return false;
+            }
+            else if (surname == "") {
+                alert("Surname can't be null");
+                return false;
+            }
+            else if (email.match(reg) == false) {
+                alert("Invalid Email Address");
+                return false;
+            }
+            else if (mobileno.match(phoneno) == false) {
+                alert("Enter valid mobile number");
+                return false;
+            }
+            else if (byear > 2002) {
+                alert("Your age should be less than 18");
+                return false;
+            }
+        }
+        function myFunction() {
+            var x = document.getElementById("fname");
+            x.value = x.value.toUpperCase();
+        }
+        function myFunction2() {
+            var x = document.getElementById("surname");
+            x.value = x.value.toUpperCase();
+        }
+
+    </script>
+    <style>
+        section {
+            margin-top: 15px;
+            padding: 20px 20px 20px 80px;
+            background-color: rgba(34, 130, 194, 0.918);
+            border-radius: 5px;
+        }
+
+        td {
+            padding: 12px;
+            margin: 20px;
+        }
+
+        body {
+            background-image: url("Error 404.jpg");
+            background-attachment: fixed;
+            background-size: cover;
+            font-family: 'Rubik', sans-serif;
+            color: rgb(224, 159, 18);
+        }
+
+        div {
+            font-size: 50px;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header
+        style="font-family: 'Work sans', sans-serif;  border-radius: 5px; background-color:rgba(34, 130, 194, 0.918);">
+        <div style="text-align: center;">
+            <p style="padding-top: 15px; font-size: 50px; margin: 15px 0px 15px 0px; font-weight: bold;">CodeTram</p>
+            <h4 style="margin: 0px 15px 15px 0px;padding-bottom: 10px;font-size: 25px;">( A Tram of Coding Joy )</h4>
+        </div>
+    </header>
+    <section>
+        <h3
+            style="text-align: right; margin: 10px 100px 0px 750px; padding: 5px; border-radius: 4px; background-color: skyblue;">
+            Make sure you give your wrong information </h3>
+        <h3
+            style="background-color: skyblue;border-radius: 5px; padding-right: 20px; margin-left: 100px;  padding: 5px 0px 5px 55px; margin-right: 850px;">
+            Fill Up Your Details </h4>
+            <table style=" text-align: center ;margin-left: 75px; padding: 15px;">
+                <form>
+                    <div>
+                        <tr>
+                            <td style="background-color: skyblue;border-radius: 5px; font-weight: bold;">
+                                First Name
+                            </td>
+                            <td>
+                                <input type="text" name="firstname" placeholder="Firstname" id="fname"
+                                    style="border-radius: 3px;" onblur="myFunction()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: skyblue;border-radius: 5px; font-weight: bold;"> Surname
+                            </td>
+                            <td><input type="text" name="surname" placeholder="Surname" id="surname"
+                                    style="border-radius: 3px;" onblur="myFunction2()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: skyblue;border-radius: 5px; font-weight: bold;">Emai Id
+                            </td>
+                            <td><input type="email" name="email" placeholder="E-mail" id="email"
+                                    style="border-radius: 3px;"></td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: skyblue;border-radius: 5px; font-weight: bold;">Mobile No
+                            </td>
+                            <td><input type="text" name="mobileno" placeholder="Mobile number" id="mobileno"
+                                    style="border-radius: 3px;"></td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: skyblue;border-radius: 5px; font-weight: bold;">Birthdate
+                            </td>
+                            <td><input type="date" name="Birthdate" placeholder="Birthdate" id="bdate"
+                                    style="width: 97%;border-radius: 3px;"></td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: skyblue;border-radius: 5px; font-weight: bold;">Password
+                            </td>
+                            <td><input type="Password" name="Password" placeholder="Password" id="pwd"
+                                    style="border-radius: 3px;"></td>
+                        <tr>
+                            <td colspan="2" style="align-items: center;">
+                                <button type="submit" onclick="validateForm()"
+                                    style="align-items: center; border-radius: 3px; margin-top: 10px;">Submit</button>
+                            </td>
+                        </tr>
+                    </div>
+                </form>
+            </table>
+    </section>
+</body>
+
+</html>
